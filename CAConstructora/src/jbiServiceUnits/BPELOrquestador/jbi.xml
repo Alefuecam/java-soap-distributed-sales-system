@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jbi xmlns="http://java.sun.com/xml/ns/jbi" xmlns:ns0="http://enterprise.netbeans.org/bpel/BPELOrquestador/BPELOrquestador" xmlns:ns1="http://j2ee.netbeans.org/wsdl/BPELOrquestador/src/gestionTienda" xmlns:ns2="http://wspedido/" xmlns:ns3="http://wscredito/" xmlns:ns4="http://wsenvios/" xmlns:ns5="http://www.sun.com/jbi/descriptor/service-unit" version="1.0">
+    <services binding-component="false">
+        <provides endpoint-name="gestionTiendaPortTypeRole_myRole" interface-name="ns1:gestionTiendaPortType" service-name="ns0:GestionTienda">
+            <ns5:display-name>GestionTienda</ns5:display-name>
+            <ns5:process-name>BPELOrquestador</ns5:process-name>
+            <ns5:file-path>BPELOrquestador.bpel</ns5:file-path>
+        </provides>
+        <consumes endpoint-name="WSPedidoRole_partnerRole" interface-name="ns2:WSPedido" service-name="ns0:Pedido">
+            <ns5:display-name>Pedido</ns5:display-name>
+            <ns5:process-name>BPELOrquestador</ns5:process-name>
+            <ns5:file-path>BPELOrquestador.bpel</ns5:file-path>
+        </consumes>
+        <consumes endpoint-name="WSCreditoRole_partnerRole" interface-name="ns3:WSCredito" service-name="ns0:Credito">
+            <ns5:display-name>Credito</ns5:display-name>
+            <ns5:process-name>BPELOrquestador</ns5:process-name>
+            <ns5:file-path>BPELOrquestador.bpel</ns5:file-path>
+        </consumes>
+        <consumes endpoint-name="WS_EnviosRole_partnerRole" interface-name="ns4:WS_Envios" service-name="ns0:Envio">
+            <ns5:display-name>Envio</ns5:display-name>
+            <ns5:process-name>BPELOrquestador</ns5:process-name>
+            <ns5:file-path>BPELOrquestador.bpel</ns5:file-path>
+        </consumes>
+    </services>
+</jbi>

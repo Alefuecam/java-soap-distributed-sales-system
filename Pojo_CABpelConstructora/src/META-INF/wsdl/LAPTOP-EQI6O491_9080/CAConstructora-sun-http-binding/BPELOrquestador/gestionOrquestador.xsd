@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:tns="http://xml.netbeans.org/schema/gestionOrquestador" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://xml.netbeans.org/schema/gestionOrquestador">
+    <xsd:complexType name="gestionTienda">
+        <xsd:sequence>
+            <xsd:element name="id_clte" type="xsd:int"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="lista_item" type="tns:ClsItem"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="respuestaGestionTienda">
+        <xsd:sequence>
+            <xsd:element name="num_pedido" type="xsd:int"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="faultTienda">
+        <xsd:sequence>
+            <xsd:element name="msgEx" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ClsItem">
+        <xsd:sequence>
+            <xsd:element name="id_prod" type="xsd:int"/>
+            <xsd:element name="cantidad" type="xsd:int"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="eltoFault" type="tns:faultTienda"/>
+    <xsd:element name="eltoGestionTienda" type="tns:gestionTienda"/>
+    <xsd:element name="eltoRepuestaTienda" type="tns:respuestaGestionTienda"/>
+</xsd:schema>

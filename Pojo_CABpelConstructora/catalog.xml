@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:9080/CAConstructoraService1/casaPort1?WSDL" uri="xml-resources/web-service-references/casaPort1/wsdl/localhost_9080/CAConstructoraService1/casaPort1.wsdl"/>
+    <system systemId="http://LAPTOP-EQI6O491:9080/CAConstructora-sun-http-binding/BPELOrquestador/gestionTienda.wsdl" uri="xml-resources/web-service-references/casaPort1/wsdl/LAPTOP-EQI6O491_9080/CAConstructora-sun-http-binding/BPELOrquestador/gestionTienda.wsdl"/>
+    <system systemId="http://LAPTOP-EQI6O491:9080/CAConstructora-sun-http-binding/BPELOrquestador/gestionOrquestador.xsd" uri="xml-resources/web-service-references/casaPort1/wsdl/LAPTOP-EQI6O491_9080/CAConstructora-sun-http-binding/BPELOrquestador/gestionOrquestador.xsd"/>
+    <system systemId="http://localhost:8080/WS_Pedidos/WSPedido?WSDL" uri="xml-resources/web-service-references/WSPedido/wsdl/localhost_8080/WS_Pedidos/WSPedido.wsdl"/>
+    <system systemId="http://localhost:8080/WS_Pedidos/WSPedido?xsd=1" uri="xml-resources/web-service-references/WSPedido/wsdl/localhost_8080/WS_Pedidos/WSPedido.xsd_1.xsd"/>
+</catalog>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://j2ee.netbeans.org/wsdl/BPELOrquestador/src/gestionTienda" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="CAConstructora" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="CAConstructora">
+  <import location="http://LAPTOP-EQI6O491:9080/CAConstructora-sun-http-binding/BPELOrquestador/gestionTienda.wsdl" namespace="http://j2ee.netbeans.org/wsdl/BPELOrquestador/src/gestionTienda">
+    </import>
+  <portType name="dummyCasaPortType">
+  </portType>
+  <binding name="casaBinding1" type="ns:gestionTiendaPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="gestionTiendaOperation">
+      <soap:operation/>
+      <input name="input1">
+        <soap:body use="literal"/>
+      </input>
+      <output name="output1">
+        <soap:body use="literal"/>
+      </output>
+      <fault name="fault1">
+        <soap:fault name="fault1" use="literal"/>
+      </fault>
+    </operation>
+  </binding>
+  <service name="CAConstructoraService1">
+    <port binding="tns:casaBinding1" name="casaPort1">
+      <soap:address location="http://LAPTOP-EQI6O491:9080/CAConstructoraService1/casaPort1"/>
+    </port>
+  </service>
+</definitions>

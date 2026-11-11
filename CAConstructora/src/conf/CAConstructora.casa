@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<casa xmlns="http://java.sun.com/xml/ns/casa" xmlns:ns1="http://wspedido/" xmlns:ns2="http://wscredito/" xmlns:ns3="http://wsenvios/" xmlns:ns4="CAConstructora" xmlns:ns5="http://j2ee.netbeans.org/wsdl/BPELOrquestador/src/gestionTienda" xmlns:ns6="http://enterprise.netbeans.org/bpel/BPELOrquestador/BPELOrquestador" xmlns:xlink="http://www.w3.org/2000/xlink">
+    <endpoints>
+        <endpoint endpoint-name="WSPedidoPort" interface-name="ns1:WSPedido" name="endpoint1" service-name="ns1:WSPedido"/>
+        <endpoint endpoint-name="WSCreditoPort" interface-name="ns2:WSCredito" name="endpoint2" service-name="ns2:WSCredito"/>
+        <endpoint endpoint-name="WS_EnviosPort" interface-name="ns3:WS_Envios" name="endpoint3" service-name="ns3:WS_Envios"/>
+        <endpoint endpoint-name="casaPort1" interface-name="ns5:gestionTiendaPortType" name="endpoint4" service-name="ns4:CAConstructoraService1"/>
+        <endpoint display-name="GestionTienda" endpoint-name="gestionTiendaPortTypeRole_myRole" file-path="BPELOrquestador.bpel" interface-name="ns5:gestionTiendaPortType" name="endpoint5" process-name="BPELOrquestador" service-name="ns6:GestionTienda"/>
+        <endpoint display-name="Pedido" endpoint-name="WSPedidoRole_partnerRole" file-path="BPELOrquestador.bpel" interface-name="ns1:WSPedido" name="endpoint6" process-name="BPELOrquestador" service-name="ns6:Pedido"/>
+        <endpoint display-name="Credito" endpoint-name="WSCreditoRole_partnerRole" file-path="BPELOrquestador.bpel" interface-name="ns2:WSCredito" name="endpoint7" process-name="BPELOrquestador" service-name="ns6:Credito"/>
+        <endpoint display-name="Envio" endpoint-name="WS_EnviosRole_partnerRole" file-path="BPELOrquestador.bpel" interface-name="ns3:WS_Envios" name="endpoint8" process-name="BPELOrquestador" service-name="ns6:Envio"/>
+    </endpoints>
+    <service-units>
+        <service-engine-service-unit artifacts-zip="BPELOrquestador.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="CAConstructora-BPELOrquestador" unit-name="BPELOrquestador" unknown="false" x="140" y="99">
+            <provides endpoint="endpoint5"/>
+            <consumes endpoint="endpoint6"/>
+            <consumes endpoint="endpoint7"/>
+            <consumes endpoint="endpoint8"/>
+        </service-engine-service-unit>
+        <binding-component-service-unit artifacts-zip="sun-http-binding.jar" component-name="sun-http-binding" description="Represents this Service Unit" name="CAConstructora-sun-http-binding" unit-name="sun-http-binding">
+            <ports>
+                <port bindingType="soap" x="67" y="299">
+                    <link xlink:href="../jbiasa/CAConstructora.wsdl#xpointer(/definitions/service[@name='CAConstructoraService1']/port[@name='casaPort1'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint4"/>
+                    <provides endpoint="endpoint4"/>
+                </port>
+                <port x="67" y="197">
+                    <link xlink:href="../jbiServiceUnits/BPELOrquestador/localhost_8080/WS_Credito/WSCredito.wsdl#xpointer(/definitions/service[@name='WSCredito']/port[@name='WSCreditoPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint2"/>
+                    <provides endpoint="endpoint2"/>
+                </port>
+                <port x="67" y="118">
+                    <link xlink:href="../jbiServiceUnits/BPELOrquestador/localhost_8080/WS_Envios/WS_Envios.wsdl#xpointer(/definitions/service[@name='WS_Envios']/port[@name='WS_EnviosPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint3"/>
+                    <provides endpoint="endpoint3"/>
+                </port>
+                <port x="67" y="39">
+                    <link xlink:href="../jbiServiceUnits/BPELOrquestador/localhost_8080/WS_Pedidos/WSPedido.wsdl#xpointer(/definitions/service[@name='WSPedido']/port[@name='WSPedidoPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint1"/>
+                    <provides endpoint="endpoint1"/>
+                </port>
+            </ports>
+        </binding-component-service-unit>
+    </service-units>
+    <connections>
+        <connection consumer="endpoint6" mode="" provider="endpoint1" route-type="" routing-rule="" state="unchanged"/>
+        <connection consumer="endpoint4" mode="" provider="endpoint5" route-type="direct" routing-rule="" state="new"/>
+        <connection consumer="endpoint7" mode="" provider="endpoint2" route-type="" routing-rule="" state="unchanged"/>
+        <connection consumer="endpoint8" mode="" provider="endpoint3" route-type="" routing-rule="" state="unchanged"/>
+    </connections>
+    <porttypes>
+        <link xlink:href="../jbiasa/CAConstructora.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BPELOrquestador/gestionTienda.wsdl#xpointer(/definitions/portType[@name='gestionTiendaPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BPELOrquestador/localhost_8080/WS_Credito/WSCredito.wsdl#xpointer(/definitions/portType[@name='WSCredito'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BPELOrquestador/localhost_8080/WS_Envios/WS_Envios.wsdl#xpointer(/definitions/portType[@name='WS_Envios'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BPELOrquestador/localhost_8080/WS_Pedidos/WSPedido.wsdl#xpointer(/definitions/portType[@name='WSPedido'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CAConstructora.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
+    </porttypes>
+    <bindings>
+        <link xlink:href="../jbiasa/CAConstructora.wsdl#xpointer(/definitions/binding[@name='casaBinding1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BPELOrquestador/localhost_8080/WS_Credito/WSCredito.wsdl#xpointer(/definitions/binding[@name='WSCreditoPortBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BPELOrquestador/localhost_8080/WS_Envios/WS_Envios.wsdl#xpointer(/definitions/binding[@name='WS_EnviosPortBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BPELOrquestador/localhost_8080/WS_Pedidos/WSPedido.wsdl#xpointer(/definitions/binding[@name='WSPedidoPortBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CAConstructora.wsdl#xpointer(/definitions/binding[@name='casaBinding1'])" xlink:type="simple"/>
+    </bindings>
+    <services>
+        <link xlink:href="../jbiasa/CAConstructora.wsdl#xpointer(/definitions/service[@name='CAConstructoraService1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BPELOrquestador/localhost_8080/WS_Credito/WSCredito.wsdl#xpointer(/definitions/service[@name='WSCredito'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BPELOrquestador/localhost_8080/WS_Envios/WS_Envios.wsdl#xpointer(/definitions/service[@name='WS_Envios'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BPELOrquestador/localhost_8080/WS_Pedidos/WSPedido.wsdl#xpointer(/definitions/service[@name='WSPedido'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CAConstructora.wsdl#xpointer(/definitions/service[@name='CAConstructoraService1'])" xlink:type="simple"/>
+    </services>
+    <regions>
+        <region name="WSDL Endpoints" width="150"/>
+        <region name="JBI Modules" width="500"/>
+        <region name="External Modules" width="200"/>
+    </regions>
+</casa>

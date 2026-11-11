@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="gestionTienda" targetNamespace="http://j2ee.netbeans.org/wsdl/BPELOrquestador/src/gestionTienda"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://j2ee.netbeans.org/wsdl/BPELOrquestador/src/gestionTienda" xmlns:ns="http://xml.netbeans.org/schema/gestionOrquestador" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
+    <types>
+        <xsd:schema targetNamespace="http://j2ee.netbeans.org/wsdl/BPELOrquestador/src/gestionTienda">
+            <xsd:import namespace="http://xml.netbeans.org/schema/gestionOrquestador" schemaLocation="gestionOrquestador.xsd"/>
+        </xsd:schema>
+    </types>
+    <message name="gestionTiendaOperationRequest">
+        <part name="datos_pedido" element="ns:eltoGestionTienda"/>
+    </message>
+    <message name="gestionTiendaOperationResponse">
+        <part name="respuesta_pedido" element="ns:eltoRepuestaTienda"/>
+    </message>
+    <message name="gestionTiendaOperationFault">
+        <part name="fault_pedido" element="ns:eltoFault"/>
+    </message>
+    <portType name="gestionTiendaPortType">
+        <operation name="gestionTiendaOperation">
+            <input name="input1" message="tns:gestionTiendaOperationRequest"/>
+            <output name="output1" message="tns:gestionTiendaOperationResponse"/>
+            <fault name="fault1" message="tns:gestionTiendaOperationFault"/>
+        </operation>
+    </portType>
+    <plnk:partnerLinkType name="gestionTienda">
+        <!-- A partner link type is automatically generated when a new port type is added. Partner link types are used by BPEL processes. 
+In a BPEL process, a partner link represents the interaction between the BPEL process and a partner service. Each partner link is associated with a partner link type.
+A partner link type characterizes the conversational relationship between two services. The partner link type can have one or two roles.-->
+        <plnk:role name="gestionTiendaPortTypeRole" portType="tns:gestionTiendaPortType"/>
+    </plnk:partnerLinkType>
+</definitions>

@@ -1,0 +1,36 @@
+# Project documentation
+*.pdf
+
+# Java compiled files
+*.class
+*.jar
+*.war
+*.ear
+
+# NetBeans generated files
+**/build/
+**/dist/
+**/nbproject/private/
+
+# Java temporary files
+*.log
+*.tmp
+*.bak
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.idea/
+*.iml
+
+# Local environment and secrets
+.env
+.env.*
+
+# Generated SOAP/JAX-WS artifacts
+**/build/generated/
+**/build/web/WEB-INF/wsdl/
+**/xml-resources/web-service-references/
+**/xml-resources/jax-ws-catalog.xml

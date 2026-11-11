@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/WS_Credito/WSCredito?WSDL" uri="../localhost_8080/WS_Credito/WSCredito.wsdl"/>
+    <system systemId="http://localhost:8080/WS_Credito/WSCredito?xsd=1" uri="../localhost_8080/WS_Credito/WSCredito.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/WS_Envios/WS_Envios?WSDL" uri="../localhost_8080/WS_Envios/WS_Envios.wsdl"/>
+    <system systemId="http://localhost:8080/WS_Envios/WS_Envios?xsd=1" uri="../localhost_8080/WS_Envios/WS_Envios.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/WS_Pedidos/WSPedido?WSDL" uri="../localhost_8080/WS_Pedidos/WSPedido.wsdl"/>
+    <system systemId="http://localhost:8080/WS_Pedidos/WSPedido?xsd=1" uri="../localhost_8080/WS_Pedidos/WSPedido.xsd_1.xsd"/>
+</catalog>
